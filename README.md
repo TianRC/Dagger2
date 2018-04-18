@@ -7,7 +7,7 @@ Container需要module1实例，我需要通过Comonent来获取对象，
 
 Container中获取module对象
   ##Container   
-     public class MainActivity extends AppCompatActivity {
+```public class MainActivity extends AppCompatActivity {
 
     @Inject
     ApiService apiService;
@@ -19,20 +19,22 @@ Container中获取module对象
         apiService.register();
     }
     }
+```
 ##Comonent
-    @Comonent(modules={Module1.class})//e连接Comonent和module
+```@Comonent(modules={Module1.class})//e连接Comonent和module
     public interface UserComonent {
     void inject(MainActivity mainActivity); //e连接Container 和Comonent
     }
-
+```
 ##Module
-    @Module
+```@Module
     public class UserModule1 {
     @Provides
     public ApiService provideApiService() {
         return new ApiService();
     }
     }
+```
 ##ApiService
     public class ApiService {
     public void register() {
