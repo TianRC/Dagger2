@@ -12,7 +12,8 @@ Container需要module1实例，我需要通过Comonent来获取对象，
 
 ## Container   
   
-```public class MainActivity extends AppCompatActivity {
+```java
+public class MainActivity extends AppCompatActivity {
 
     @Inject
     ApiService apiService;
@@ -27,14 +28,16 @@ Container需要module1实例，我需要通过Comonent来获取对象，
 ```
 ## Comonent
 
-```@Comonent(modules={Module1.class})//e连接Comonent和module
+```java
+@Comonent(modules={Module1.class})//e连接Comonent和module
     public interface UserComonent {
     void inject(MainActivity mainActivity); //e连接Container 和Comonent
     }
 ```
 ## Module
 
-```@Module
+```java
+@Module
     public class UserModule1 {
     @Provides
     public ApiService provideApiService() {
@@ -88,7 +91,8 @@ DaggerUserComponent
 ```
 ## 不同的对象 两个不同的对象
 
-```根据@Name 来实现
+```java
+根据@Name 来实现
 Container:
 @Inject
 @Named("dev")
@@ -96,7 +100,9 @@ UserManager userManager;
 @Inject
 @Named("rea")
 UserManager userManager1;
+```
 Module:
+```java
 @Named("dev")
 @Provides
 public UserManager provideUserManagerDev(ApiService apiService) {
@@ -118,8 +124,8 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 <a herf="www.baidu.com">fe</a>
 ```
 
-
-```android studio3.0以上引用
+android studio3.0以上引用
+```groovy
 annotationProcessor 'com.google.dagger:dagger-compiler:2.2'
 compile 'com.google.dagger:dagger:2.2'
 provided 'javax.annotation:jsr250-api:1.0'
