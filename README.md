@@ -44,11 +44,14 @@ Container需要module1实例，我需要通过Comonent来获取对象，
 ```
 ## ApiService
 
-    public class ApiService {
+```java
+public class ApiService {
     public void register() {
         Log.d("ApiService", "注册");
     }
     }
+```
+
 ## 注意！！
 
 ```简单的demo写好了，这里回顾下需要注意的几点，需要对象上加@inject 
