@@ -123,9 +123,10 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 ```
 在module使用@Singleton时，Comonent也必须是@Singleton，
 但是如果两个Container需要同一个单例对象轻情况下，需要将该Comonent单独提出来
-然后其他的Component对其依赖 例如:
+然后其他的Component对其依赖
   
 ```  
+ #### 例如:
 ```java
  @Component(modules = {UserModule1.class},dependencies = SingleComponent.class)
 ```
