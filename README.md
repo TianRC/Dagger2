@@ -1,4 +1,4 @@
-# 练习使用，做些笔记。
+# `练习使用，做些笔记。`
 
 需求：Container需要Module的实例
 Comonent 是Container 和Module连接的桥梁
@@ -111,7 +111,9 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 
 ## 单例：
 
-未写。。。
+```html
+<a herf="www.baidu.com">fe</a>
+```
 
 
 ```android studio3.0以上引用
