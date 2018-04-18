@@ -5,7 +5,7 @@ Comonent 是Container 和Module连接的桥梁
 
 ### 讲解下逻辑：
 
-<img src="readme_source"/>
+<img src="readme_source/pic.png"/>
 
 Container需要module1实例，我需要通过Comonent来获取对象，
 
