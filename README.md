@@ -1,15 +1,15 @@
-#练习使用，做些笔记。
+# 练习使用，做些笔记。
 
 Container需要Module的实例
 Comonent 是Container 和Module连接的桥梁
 
-###讲解下逻辑：
+### 讲解下逻辑：
 
 Container需要module1实例，我需要通过Comonent来获取对象，
 
 Container中获取module对象
 
-##Container   
+## Container   
   
 ```public class MainActivity extends AppCompatActivity {
 
@@ -24,14 +24,14 @@ Container中获取module对象
     }
     }
 ```
-##Comonent
+## Comonent
 
 ```@Comonent(modules={Module1.class})//e连接Comonent和module
     public interface UserComonent {
     void inject(MainActivity mainActivity); //e连接Container 和Comonent
     }
 ```
-##Module
+## Module
 
 ```@Module
     public class UserModule1 {
@@ -41,14 +41,14 @@ Container中获取module对象
     }
     }
 ```
-##ApiService
+## ApiService
 
     public class ApiService {
     public void register() {
         Log.d("ApiService", "注册");
     }
     }
-##注意！！
+## 注意！！
 
 ```简单的demo写好了，这里回顾下需要注意的几点，需要对象上加@inject 
 然后create（）获取对象inject
@@ -72,7 +72,7 @@ DaggerUserComponent
         .inject(this);
 这种方式来把这个传进去
 ```
-###模块化：
+### 模块化：
 
 ```引用Component
 @Component(modules = {UserModule1.class},dependencies = {Component})
@@ -82,7 +82,7 @@ DaggerUserComponent
 @Module(includes = {UserModule2.class})
 来实现模块化
 ```
-##不同的对象 两个不同的对象
+## 不同的对象 两个不同的对象
 
 ```根据@Name 来实现
 Container:
@@ -108,7 +108,7 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 }
 ```
 
-##单例：
+## 单例：
 
 未写。。。
 
