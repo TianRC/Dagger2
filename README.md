@@ -1,4 +1,4 @@
-# `练习使用，做些笔记。`
+# 练习使用，做些笔记。
 
 需求：Container需要Module的实例
 Comonent 是Container 和Module连接的桥梁
@@ -120,9 +120,17 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 
 ## 单例：
 
-```html
-<a herf="www.baidu.com">fe</a>
 ```
+在module使用@Singleton时，Comonent也必须是@Singleton，
+但是如果两个Container需要同一个单例对象轻情况下，需要将该Comonent单独提出来
+然后其他的Component对其依赖 例如:
+  
+```  
+```java
+ @Component(modules = {UserModule1.class},dependencies = SingleComponent.class)
+```
+
+
 
 android studio3.0以上引用
 ```groovy

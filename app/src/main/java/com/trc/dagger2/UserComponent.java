@@ -7,7 +7,7 @@ import dagger.Component;
 /**
  * Created by trc on 2018/4/18.
  */
-@Component(modules = {UserModule1.class})
+@Component(modules = {UserModule1.class},dependencies = AppComonent.class)
 public interface UserComponent {
     void inject(MainActivity mainActivity);
 }
