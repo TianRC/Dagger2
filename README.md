@@ -1,6 +1,6 @@
 # 练习使用，做些笔记。
 
-Container需要Module的实例
+需求：Container需要Module的实例
 Comonent 是Container 和Module连接的桥梁
 
 ### 讲解下逻辑：
@@ -9,7 +9,6 @@ Comonent 是Container 和Module连接的桥梁
 
 Container需要module1实例，我需要通过Comonent来获取对象，
 
-Container中获取module对象
 
 ## Container   
   
