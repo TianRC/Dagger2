@@ -101,10 +101,11 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 
 
 
-android studio3.0以上引用
+```android studio3.0以上引用
 annotationProcessor 'com.google.dagger:dagger-compiler:2.2'
 compile 'com.google.dagger:dagger:2.2'
 provided 'javax.annotation:jsr250-api:1.0'
+```
 
 
 
