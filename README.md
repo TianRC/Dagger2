@@ -1,4 +1,4 @@
-
+#练习使用，做些笔记。
 Container需要Module的实例
 Comonent 是Container 和Module连接的桥梁
 
