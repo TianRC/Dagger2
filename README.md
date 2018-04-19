@@ -14,7 +14,6 @@ Container需要module1实例，我需要通过Comonent来获取对象，
   
 ```java
 public class MainActivity extends AppCompatActivity {
-
     @Inject
     ApiService apiService;
     @Override
@@ -66,7 +65,7 @@ Comonent中需要连接Container和Module  ******Comonent是个接口*********
 接下来继续。。。
 上面介绍的是new 一个对象 构造方法是无参数的，如果有参数怎么办呢？？？
 
-很简单，首相dagger2会在module寻找这个对象，如果没有，会在该类构造方法中找是否有@inject
+很简单，首先dagger2会在module寻找这个对象，如果没有，会在该类构造方法中找是否有@inject
 来获取对象 如果都没有编译报错
 
 但是如果需要在Contain传进去一个参数呢

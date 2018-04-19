@@ -33,4 +33,5 @@ public class UserModule1 {
         Log.d("UserModule1", "provideUserManager");
         return new UserManager(apiService);
     }
+
 }
