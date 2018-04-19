@@ -1,4 +1,5 @@
 # 练习使用，做些笔记。
+#### 温故而知新
 
 需求：Container需要Module的实例
 Comonent 是Container 和Module连接的桥梁
@@ -117,7 +118,7 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 }
 ```
 
-## 单例：
+## 单例：——————————————————————————————————————————————————————
 
 ```
 在module使用@Singleton时，Comonent也必须是@Singleton，
@@ -129,10 +130,53 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 ```java
  @Component(modules = {UserModule1.class},dependencies = SingleComponent.class)
 ```
+### Application 单例 AppComponent
+```java
+@Singleton
+@Component(modules = ApplicationModule.class)
+public interface AppComonent {
+    Gson gson();
+}
+```
+#### AppModule
 
+```java
+@Module
+public class ApplicationModule {
+    @Singleton
+    @Provides
+    public Gson providesGson() {
+        return new Gson();
+    }
 
+}
+```
 
-android studio3.0以上引用
+#### UserComponent
+```java
+@ActivityScoped
+@Component(modules = {UserModule1.class} ,dependencies = {AppComonent.class})
+public interface UserComponent {
+    void inject(MainActivity mainActivity);
+}
+```
+#### LoginConponent
+```java
+@ActivityScoped
+@Component(modules = {UserModule1.class} ,dependencies = AppComonent.class)
+public interface LoginComponent {
+    void inject(LoginActivity loginActivity);
+}
+```
+
+   * 在Mainactivity和LoginActivity打印的对象为单例了
+
+```text
+04-19 07:12:07.091 5516-5516/com.trc.dagger2 D/MainActivity: gson:com.trc.dagger2.Gson@3815bd3
+04-19 07:12:11.997 5516-5516/com.trc.dagger2 D/LoginActivity: gson:com.trc.dagger2.Gson@3815bd3
+```
+
+## android studio3.0以上引用
 ```groovy
 annotationProcessor 'com.google.dagger:dagger-compiler:2.2'
 compile 'com.google.dagger:dagger:2.2'
