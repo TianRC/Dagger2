@@ -118,8 +118,7 @@ public UserManager provideUserManagerRea(ApiService apiService) {
 }
 ```
 
-## 单例：——————————————————————————————————————————————————————
-
+## 单例：————————————————————————————————————
 ```
 在module使用@Singleton时，Comonent也必须是@Singleton，
 但是如果两个Container需要同一个单例对象轻情况下，需要将该Comonent单独提出来
@@ -169,7 +168,7 @@ public interface LoginComponent {
 }
 ```
 
-   * 在Mainactivity和LoginActivity打印的对象为单例了
+   * 在Mainactivity和LoginActivity打印的对象为单例了,日志如下：
 
 ```text
 04-19 07:12:07.091 5516-5516/com.trc.dagger2 D/MainActivity: gson:com.trc.dagger2.Gson@3815bd3
